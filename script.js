@@ -56,7 +56,7 @@ class Calculator {
       this.previousOperand = ''
     }
   
-    getDisplayNumber(number) {
+    getDisplayNumbers(number) {
       const stringNumber = number.toString()
       const integerDigits = parseFloat(stringNumber.split('.')[0])
       const decimalDigits = stringNumber.split('.')[1]
@@ -75,10 +75,10 @@ class Calculator {
   
     updateDisplay() {
       this.currentOperandTextElement.innerText =
-        this.getDisplayNumber(this.currentOperand)
+        this.getDisplayNumbers(this.currentOperand)
       if (this.operation != null) {
         this.previousOperandTextElement.innerText =
-          `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
+          `${this.getDisplayNumbers(this.previousOperand)} ${this.operation}`
       } else {
         this.previousOperandTextElement.innerText = ''
       }
